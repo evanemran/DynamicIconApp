@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DynamicIconApp</string>
+    <string name="alias_1">MainActivityAlias</string>
+    <string name="alias_2">MainActivityAliasTwo</string>
+</resources>
