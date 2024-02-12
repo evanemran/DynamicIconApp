@@ -16,8 +16,7 @@
         <receiver
             android:name=".IconChangeReceiver"
             android:enabled="true"
-            android:exported="true"
-            android:permission="TODO">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.evanemran.dynamiciconapp.ACTION_CHANGE_ICON" />
             </intent-filter>
@@ -34,6 +33,7 @@
             android:icon="@drawable/icon_one"
             android:roundIcon="@drawable/icon_one"
             android:targetActivity=".MainActivity"
+            android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +46,7 @@
             android:icon="@drawable/icon_two"
             android:roundIcon="@drawable/icon_two"
             android:targetActivity=".MainActivity"
+            android:enabled="false"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
