@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.evanemran.dynamiciconapp.databinding.ActivityMainBinding
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 //            val iconChangeIntent = Intent("com.evanemran.dynamiciconapp.ACTION_CHANGE_ICON")
 //            sendBroadcast(iconChangeIntent)
             aliasManager.selectedAlias = getString(R.string.alias_1)
-            setIconOne()
+//            setIconOne()
             Toast.makeText(this, getString(R.string.alias_1), Toast.LENGTH_SHORT).show()
         }
 
@@ -50,9 +51,21 @@ class MainActivity : AppCompatActivity() {
 //            val iconChangeIntent = Intent("com.evanemran.dynamiciconapp.ACTION_CHANGE_ICON")
 //            sendBroadcast(iconChangeIntent)
             aliasManager.selectedAlias = getString(R.string.alias_2)
-            setIconTwo()
+//            setIconTwo()
             Toast.makeText(this, getString(R.string.alias_2), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onStop() {
+        aliasManager.selectedAlias.let {
+            if (it == getString(R.string.alias_1)) {
+                setIconOne()
+            }
+            else if (it == getString(R.string.alias_2)) {
+                setIconTwo()
+            }
+        }
+        super.onStop()
     }
 
     private fun setIconOne() {

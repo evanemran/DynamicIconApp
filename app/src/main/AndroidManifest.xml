@@ -22,6 +22,15 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".AppStateChangeReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
